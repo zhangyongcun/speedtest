@@ -1,0 +1,12 @@
+[Unit]
+Description=Speedtest Service
+After=network.target
+
+[Service]
+Type=simple
+LimitNOFILE=32768
+WorkingDirectory=/opt/speedtest
+ExecStart=/opt/speedtest/speedtest -c /opt/speedtest/settings.toml
+
+[Install]
+WantedBy=multi-user.target
